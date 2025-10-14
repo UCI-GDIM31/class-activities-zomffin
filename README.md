@@ -18,6 +18,10 @@ DidPlayerHitBeat()
 The paramter/input should be a key press and time it was pressed. 
 The return type should be a boolean, since we're measuring if they did or didn't hit it (assuming there's no accuracy measuring). 
 
+MonoBehaviour
+1. The relationship between classes and components is similar to that of cooking recipes. Classes are like recipes, guidelines that components should follow. Components give those recipes to the GameObjects (kitchen) which get cooked when you run the game. 
+    Method are the steps to the recipe while member variables are the ingredients. Sometimes you might have to grab an ingredient from another part of the kitchen (a different GameObject/Script). 
+2. The multiplier keeps multiplying, so it's exponential. If it's bounced 5 times and hit the threshold 3 times, then it's color modifier has been multiplied 1.5^3. ^
 
 ## Open-Source Assets
 ### W1
