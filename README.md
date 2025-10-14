@@ -12,6 +12,13 @@ Create future Devlog sub-headers with the three # symbols, then write your Devlo
     A float could work, but because a count will always be a whole number (it's impossible for the ball to do half a bounce), an int is ideal. 
 3. I didn't get any errors woopsie. 
 
+### Week 3 Devlog
+Table 6, Rhythm game prompt 
+DidPlayerHitBeat() 
+The paramter/input should be a key press and time it was pressed. 
+The return type should be a boolean, since we're measuring if they did or didn't hit it (assuming there's no accuracy measuring). 
+
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
