@@ -23,6 +23,16 @@ MonoBehaviour
     Method are the steps to the recipe while member variables are the ingredients. Sometimes you might have to grab an ingredient from another part of the kitchen (a different GameObject/Script). 
 2. The multiplier keeps multiplying, so it's exponential. If it's bounced 5 times and hit the threshold 3 times, then it's color modifier has been multiplied 1.5^3. ^
 
+### Week 4 Devlog
+Table 7
+
+Line 5 is declaring a member variable. It's a float called _moveSpeed, probably related... to movement speed. It's a serialized field, so it can be edited from the inspector pane. 
+
+Line 22 is making a calculation thats storing into a new variable called translation. It's using a method to check if the player is pressing the button related to vertical (the paramater calls for the name of the input, so "Vertical" here) movement, then adjusting that by the stored _moveSpeed and the amount of time passed. 
+
+Line 25 is taking the calculation from line 22, then applying it with a method to the transform component of the GameObject. The method paramters call for x, y, and/or z values. We change the third value, so it's moving the object on the z-axis. 
+
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
