@@ -7012,7 +7012,7 @@ MonoBehaviour:
   _kickUpwardForce: 1
   _kickForce: 2
   _jumpForce: 5
-  _rigidBody: {fileID: 0}
+  _rigidBody: {fileID: 6397291155275392800}
   _animator: {fileID: 6397291155275392794}
 --- !u!136 &6397291155275392799
 CapsuleCollider:
