@@ -32,7 +32,10 @@ Line 22 is making a calculation thats storing into a new variable called transla
 
 Line 25 is taking the calculation from line 22, then applying it with a method to the transform component of the GameObject. The method paramters call for x, y, and/or z values. We change the third value, so it's moving the object on the z-axis. 
 
+_Collision activity:_
+1. We added rigidbodies to the cat and the soccerball, and checked isTrigger on for the goal. This is because the cat and the soccerball have to physically interact (the cat has to kick the ball), while the goal should just check for whether the ball has passed through it. Maybe it should also have a rigidbody for the metal parts? 
 
+2. I forgot to add the rigidbodies, so the cat and soccerball just passed through each other. To fix I just had to add the component. 
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
