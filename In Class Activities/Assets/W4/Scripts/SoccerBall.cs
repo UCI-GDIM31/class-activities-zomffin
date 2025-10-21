@@ -4,9 +4,18 @@ using UnityEngine.UI;
 
 public class SoccerBall : MonoBehaviour
 {
+    [SerializeField] private int _points;
+    [SerializeField] private float _timePassed;
     [SerializeField] private TMP_Text _pointsText;
     [SerializeField] private TMP_Text _timeText;
     [SerializeField] private ParticleSystem _goalVFX;
+
+
+    private void Update()
+    {
+        _timePassed += Time.deltaTime;
+        _timeText.text = _timePassed + "";
+    }
 
     // STEP 1 -----------------------------------------------------------------
     // The OnTriggerEnter method is a collision method called by Unity that
@@ -32,6 +41,7 @@ public class SoccerBall : MonoBehaviour
         // Refer to the slides for an example of how to check this :)
         if (other.CompareTag("Goal"))
         {
+            MadeGoal();
             Debug.Log("Soccerball detected a collision with the Goal!");
         }
 
@@ -54,7 +64,12 @@ public class SoccerBall : MonoBehaviour
     // Once you've created MadeGoal,
     //      move your Debug.Log() statement into MadeGoal, and
     //      call MadeGoal from inside your if statement in OnTriggerEnter.
-    
+
+    public void MadeGoal()
+    {
+
+
+
         // STEP 4 -------------------------------------------------------------
         // _goalVFX is a ParticleSystem, a Component for creating VFX.
         // ParticleSystem has a method named Play() that displays the VFX:
@@ -62,9 +77,15 @@ public class SoccerBall : MonoBehaviour
         //
         // Call Play on _goalVFX.
 
+        _goalVFX.Play();
+        _points++;
+        _pointsText.text = _points + "";
+        _timePassed = 0.0f;
+        _timeText.text = _timePassed + "";
+
         // STEP 4 -------------------------------------------------------------
-    
-    
+    }
+
     // STEP 3 -----------------------------------------------------------------
 
 
@@ -83,7 +104,7 @@ public class SoccerBall : MonoBehaviour
     //      2. Use your MadeGoal method to update the points and text.
     //
     // STEP 5 -----------------------------------------------------------------
-    
+
 
     // STEP 6 -----------------------------------------------------------------
     // Like the last step, these flags do NOT show you where to put all of the
