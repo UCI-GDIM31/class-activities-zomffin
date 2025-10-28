@@ -6,6 +6,8 @@ public class CatW5 : MonoBehaviour
     [SerializeField] private float _moveSpeed = 1.0f;
     [SerializeField] private float _turnSpeed = 1.0f;
     [SerializeField] private Animator _animator;
+    Vector3 translation = Vector3.zero;
+
 
     private string _isWalkingName = "IsWalking";
 
@@ -31,7 +33,10 @@ public class CatW5 : MonoBehaviour
         //          changing that axis?
         //      Should I modify translation with Vector addition, or multiplication,
         //          or both?
-        //
+
+
+
+
         // STEP 2
         // After Step 1 is working, add more code to make it possible to flip
         //      the player's control scheme.
@@ -42,14 +47,46 @@ public class CatW5 : MonoBehaviour
         //      them forwards.
         //
         // MULTIPLY one of your vectors with a certain value to do this. >:)
+        translation = Vector3.zero;
 
-        Vector3 translation = Vector3.zero;
-        
+        if (!_flipWSControls)
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                translation = Vector3.forward;
+                transform.Translate(translation * _moveSpeed * Time.deltaTime);
+                Debug.Log("W key down, translation: " + translation);
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                translation = Vector3.back;
+                transform.Translate(translation * _moveSpeed * Time.deltaTime);
+                Debug.Log("S key down, translation: " + translation);
+
+            }
+        } else
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                translation = Vector3.forward * -1;
+                transform.Translate(translation * _moveSpeed * Time.deltaTime);
+                Debug.Log("W key down, translation: " + translation);
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                translation = Vector3.back * -1;
+                transform.Translate(translation * _moveSpeed * Time.deltaTime);
+                Debug.Log("S key down, translation: " + translation);
+
+            }
+        }
 
 
-        // STEP 1 & 2 ---------------------------------------------------------
 
-        float rotation = Input.GetAxis("Horizontal") * _turnSpeed * Time.deltaTime;
+
+            // STEP 1 & 2 ---------------------------------------------------------
+
+            float rotation = Input.GetAxis("Horizontal") * _turnSpeed * Time.deltaTime;
         transform.Rotate(0, rotation, 0);
 
         if (translation.magnitude != 0.0f || rotation != 0.0f)

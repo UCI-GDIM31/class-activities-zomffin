@@ -39,9 +39,15 @@ _Collision activity:_
 
 ### Week 5 Devlog
 
+Activity 1: 
 My question was why would you use the shorthand vectors one, positive infinity, and negative infinity? twas not answered :-( 
 I liked the answer about when Vector's are necessary- basically always. Maybe there could be a challenge to use no vectors/as little vectors as possible to make a game? 
 
+Activity 2: 
+Plan for the DeerW5 script: 
+1. Needs a transform variable that saves the target the deer is going towards. 
+   A NavMeshAgent variable to store the deer's navmeshagent, and be able to use SetDestination()
+2. Uses method Start() 
 
 ## Open-Source Assets
 ### W1
