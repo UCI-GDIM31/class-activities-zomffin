@@ -49,44 +49,32 @@ public class CatW5 : MonoBehaviour
         // MULTIPLY one of your vectors with a certain value to do this. >:)
         translation = Vector3.zero;
 
+        
+        if (Input.GetKey(KeyCode.W))
+        {
+            translation = Vector3.forward;
+            Debug.Log("W key down, translation: " + translation);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            translation = Vector3.back;
+            Debug.Log("S key down, translation: " + translation);
+        }
+
         if (!_flipWSControls)
         {
-            if (Input.GetKey(KeyCode.W))
-            {
-                translation = Vector3.forward;
-                transform.Translate(translation * _moveSpeed * Time.deltaTime);
-                Debug.Log("W key down, translation: " + translation);
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                translation = Vector3.back;
-                transform.Translate(translation * _moveSpeed * Time.deltaTime);
-                Debug.Log("S key down, translation: " + translation);
+            transform.Translate(translation * _moveSpeed * Time.deltaTime);
 
-            }
         } else
         {
-            if (Input.GetKey(KeyCode.W))
-            {
-                translation = Vector3.forward * -1;
-                transform.Translate(translation * _moveSpeed * Time.deltaTime);
-                Debug.Log("W key down, translation: " + translation);
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                translation = Vector3.back * -1;
-                transform.Translate(translation * _moveSpeed * Time.deltaTime);
-                Debug.Log("S key down, translation: " + translation);
-
-            }
+            transform.Translate(translation * _moveSpeed * Time.deltaTime * -1);
         }
 
 
 
+        // STEP 1 & 2 ---------------------------------------------------------
 
-            // STEP 1 & 2 ---------------------------------------------------------
-
-            float rotation = Input.GetAxis("Horizontal") * _turnSpeed * Time.deltaTime;
+        float rotation = Input.GetAxis("Horizontal") * _turnSpeed * Time.deltaTime;
         transform.Rotate(0, rotation, 0);
 
         if (translation.magnitude != 0.0f || rotation != 0.0f)
