@@ -36,6 +36,13 @@ _Collision activity:_
 1. We added rigidbodies to the cat and the soccerball, and checked isTrigger on for the goal. This is because the cat and the soccerball have to physically interact (the cat has to kick the ball), while the goal should just check for whether the ball has passed through it. Maybe it should also have a rigidbody for the metal parts? 
 
 2. I forgot to add the rigidbodies, so the cat and soccerball just passed through each other. To fix I just had to add the component. 
+
+### Week 5 Devlog
+
+My question was why would you use the shorthand vectors one, positive infinity, and negative infinity? twas not answered :-( 
+I liked the answer about when Vector's are necessary- basically always. Maybe there could be a challenge to use no vectors/as little vectors as possible to make a game? 
+
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
