@@ -49,6 +49,15 @@ Plan for the DeerW5 script:
    A NavMeshAgent variable to store the deer's navmeshagent, and be able to use SetDestination()
 2. Uses method Start() 
 
+
+### Week 6 Devlog
+Activity 1:
+    [Class resources](https://docs.google.com/document/d/1IZFJUcFgjnf2ph_xvqjTaqAltUuFe4KMaDIYs-4cPV8/edit?usp=sharing)
+    We lowkey didn't do category assignments and all just added links wherever we could think to add one. Also added some from the example in lecture. 
+
+Activity 2: 
+
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
