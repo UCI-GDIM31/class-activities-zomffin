@@ -56,6 +56,12 @@ Activity 1:
     We lowkey didn't do category assignments and all just added links wherever we could think to add one. Also added some from the example in lecture. 
 
 Activity 2: 
+Coding notes: 
+    - Float variable for Speed
+    - Transform variable from the player 
+    - Needs Update() to check distance from player 
+    - Needs Collision() based on the example minigame (for the text that pops up)
+    - Needs written methods for the start chase and end chase functions 
 
 
 ## Open-Source Assets
