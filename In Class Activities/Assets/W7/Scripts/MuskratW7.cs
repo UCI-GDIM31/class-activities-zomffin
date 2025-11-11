@@ -71,6 +71,19 @@ public class MuskratW7 : MonoBehaviour
         // The Muskrat should never play the "flying" animation while on a
         //      bubble.
 
+        //_animator.SetBool("flying", false);
+
+        Debug.Log("y velocity: " + _rigidbody.linearVelocity.y + " z velocity: " + _rigidbody.linearVelocity.z + " x velocity: " + _rigidbody.linearVelocity.x);
+        if (Mathf.Abs(forward) > 0f || Mathf.Abs(leftright) > 0f)
+        {
+            _animator.SetBool("running", true);
+            //Debug.Log("Running set true");
+        }
+        else
+        {
+            _animator.SetBool("running", false);
+        }
+
 
         // STEP 5 -------------------------------------------------------------
     }
@@ -105,8 +118,8 @@ public class MuskratW7 : MonoBehaviour
         //      move the Muskrat forwards and backwards.
 
         //transform.position += movement * Vector3.forward * _moveSpeed * Time.deltaTime;
-        transform.position += movement * transform.forward * _moveSpeed * Time.deltaTime; 
-        
+        transform.position += movement * transform.forward * _moveSpeed * Time.deltaTime;
+
 
         // STEP 2 -------------------------------------------------------------
 
@@ -118,6 +131,26 @@ public class MuskratW7 : MonoBehaviour
         // You may also find the absolute value method, Mathf.Abs(), helpful:
         //      https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Mathf.Abs.html
 
+        Debug.Log("Y velocity: " + _rigidbody.linearVelocity.y);
+        if (Mathf.Abs(_rigidbody.linearVelocity.y) >= 1f)
+        {
+            _animator.SetBool("flying", true);
+            //Debug.Log("Flying set true");
+        }
+        else
+        {
+            _animator.SetBool("flying", false);
+        } 
+
+        if(Mathf.Abs(_rigidbody.linearVelocity.x) > 0f || Mathf.Abs(_rigidbody.linearVelocity.z) > 0f)
+        {
+            _animator.SetBool("running", true);
+            //Debug.Log("Running set true");
+        }
+        else
+        {
+            _animator.SetBool("running", false); 
+        }
         
         // STEP 4 -------------------------------------------------------------
     }
@@ -146,6 +179,7 @@ public class MuskratW7 : MonoBehaviour
         if (collision.gameObject.tag.Equals("Ball"))
         {
             _orbitMode = true;
+            _animator.SetBool("flying", false);
             _rigidbody.isKinematic = true;
 
             _sphereTransform = collision.transform;
