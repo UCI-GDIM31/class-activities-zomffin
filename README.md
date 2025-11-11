@@ -64,6 +64,12 @@ Coding notes:
     - Needs written methods for the start chase and end chase functions 
 
 
+### Week 7 Devlog
+*What was wrong with the code in Step 2?*
+The problem with the code in Step 2 was that the original code was using Vector3.forward. This vector is based off the global position rather than the local position,
+so the muskrat only ever moved forward and back in the global space and didn't account for the muskrat's rotation.
+Instead, we use transform.forward to get the forward axis for the local position of the muskrat. 
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
